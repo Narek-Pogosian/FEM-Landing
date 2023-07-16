@@ -1,0 +1,46 @@
+@use "../abstracts/" as *;
+
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq {
+  max-width: 600px;
+
+  @include fade-in;
+}
+
+.more-info {
+  @include btn;
+  margin-top: 1rem;
+}
+
+.accordion {
+  color: $neutral-800;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  padding-block: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.4s;
+}
+
+.accordion:hover {
+  color: $red;
+}
+
+.panel {
+  margin-block: 1rem;
+  max-height: 0;
+  border-bottom: 1px solid rgb(215, 215, 215);
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  color: $neutral-500;
+}

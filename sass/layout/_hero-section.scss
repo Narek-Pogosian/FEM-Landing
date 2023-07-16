@@ -1,0 +1,97 @@
+@use "../abstracts/" as *;
+
+.hero-section {
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    // center image
+    & > div:first-of-type {
+      display: flex;
+      justify-content: center;
+      @include slide-in-right;
+    }
+
+    @include lg {
+      flex-direction: row-reverse;
+      gap: 3rem;
+
+      & > div {
+        flex: 1;
+      }
+    }
+  }
+
+  .hero-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+
+    h1 {
+      color: $neutral-800;
+      font-size: 2rem;
+
+      @include slide-in;
+
+      @include md {
+        font-size: 3rem;
+      }
+    }
+
+    p {
+      @include paragraph;
+      @include slide-in(1);
+    }
+
+    @include lg {
+      text-align: left;
+    }
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include slide-in(2);
+
+    @include lg {
+      justify-content: flex-start;
+    }
+
+    button:first-of-type {
+      @include btn;
+    }
+
+    button:last-of-type {
+      @include btn($red);
+    }
+  }
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -10;
+}
+
+.hero-section::after {
+  filter: blur(80px) saturate(250%);
+  opacity: 0.4;
+
+  background-image: radial-gradient(
+      at 70% 60%,
+      rgb(252, 154, 94) 0px,
+      transparent 40%
+    ),
+    radial-gradient(at 20% 10%, rgb(160, 161, 243) 0px, transparent 50%);
+}

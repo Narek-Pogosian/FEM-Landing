@@ -1,0 +1,108 @@
+@use "../abstracts/" as *;
+
+header {
+  padding-block: 2rem;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desktop-nav {
+  display: none;
+
+  @include md {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  a {
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 300ms;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  a:last-of-type {
+    @include btn($red);
+    height: fit-content;
+  }
+}
+
+.mobile-nav {
+  position: absolute;
+  left: 0;
+  top: -100%;
+  transition: transform 400ms;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  background-color: rgba(52, 52, 83, 0.947);
+  padding: 2rem 1rem;
+
+  & > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    a {
+      width: 100%;
+      text-align: center;
+      padding-block: 1rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+
+      &:last-of-type {
+        border: 2px solid white;
+        padding-block: 0.5rem;
+        margin-top: 0.5rem;
+        border-radius: $border-radius;
+      }
+    }
+  }
+
+  .nav-social-links {
+    flex: 1;
+
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+}
+
+.mobile-nav.active {
+  transform: translateY(100%);
+}
+
+.mobile-nav,
+.open-menu {
+  @include md {
+    display: none;
+  }
+}
+
+.open-menu,
+.close-menu {
+  @include btn-icon;
+}

@@ -1,0 +1,89 @@
+@use "../abstracts/" as *;
+
+.features-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  @include slide-in-top(1);
+
+  @include md {
+    flex-direction: row;
+  }
+
+  button {
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    font-weight: 500;
+    border: none;
+    padding: 1rem 2rem;
+
+    &:hover {
+      color: $red;
+    }
+
+    &.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $red;
+    }
+  }
+}
+
+.tab-contents {
+  @include fade-in(1);
+}
+
+.tab-content {
+  display: none;
+
+  &.active {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+
+    animation: tab-slide;
+    animation-duration: 700ms;
+
+    @include md {
+      flex-direction: row;
+      gap: 4rem;
+
+      & > div {
+        flex: 1;
+      }
+    }
+  }
+
+  // Text styling
+  & > div:last-of-type {
+    text-align: center;
+
+    @include md {
+      text-align: left;
+    }
+
+    h3 {
+      color: $neutral-800;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 400px;
+      @include paragraph;
+    }
+  }
+}

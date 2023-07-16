@@ -1,0 +1,19 @@
+@use "../abstracts/" as *;
+
+.section-info {
+  max-width: 25rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2rem;
+    color: $neutral-800;
+    margin-bottom: 1rem;
+    @include slide-in-top(1);
+  }
+
+  p {
+    @include paragraph;
+    @include slide-in-top(1);
+  }
+}

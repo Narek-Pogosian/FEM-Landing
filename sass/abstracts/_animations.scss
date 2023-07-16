@@ -1,0 +1,72 @@
+@mixin animation {
+  // Problems with animation on mobile
+  @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin slide-in($i: 0) {
+  @include animation {
+    opacity: 0;
+    transition: opacity 800ms, transform 700ms;
+    transform: translateX(-20%);
+    transition-delay: 300ms * $i;
+
+    &.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin slide-in-right($i: 0) {
+  @include animation {
+    opacity: 0;
+    transition: opacity 800ms, transform 700ms;
+    transform: translateX(20%);
+    transition-delay: 300ms * $i;
+
+    &.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin slide-in-top($i: 0) {
+  @include animation {
+    opacity: 0;
+    transition: opacity 800ms, transform 700ms;
+    transform: translateY(-20%);
+    transition-delay: 300ms * $i;
+
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin fade-in($i: 0) {
+  @include animation {
+    opacity: 0;
+    transition: opacity 800ms;
+    transition-delay: 300ms * $i;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes tab-slide {
+  from {
+    opacity: 0;
+    scale: 0.97;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
