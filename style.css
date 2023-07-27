@@ -200,7 +200,7 @@ header .container {
   }
 }
 .section-info p {
-  color: hsl(229deg, 8%, 60%);
+  color: hsl(230deg, 7%, 49%);
   font-size: 18px;
 }
 @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
@@ -300,7 +300,7 @@ section {
   }
 }
 .hero-section .hero-text p {
-  color: hsl(229deg, 8%, 60%);
+  color: hsl(230deg, 7%, 49%);
   font-size: 18px;
 }
 @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
@@ -388,22 +388,6 @@ section {
   box-shadow: 0px 0px 0px 2px hsl(0deg, 94%, 66%) inset;
   -webkit-box-shadow: 0px 0px 0px 2px hsl(0deg, 94%, 66%) inset;
   -moz-box-shadow: 0px 0px 0px 2px hsl(0deg, 94%, 66%) inset;
-}
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -10;
-}
-
-.hero-section::after {
-  filter: blur(80px) saturate(250%);
-  opacity: 0.4;
-  background-image: radial-gradient(at 70% 60%, rgb(252, 154, 94) 0px, transparent 40%), radial-gradient(at 20% 10%, rgb(160, 161, 243) 0px, transparent 50%);
 }
 
 .features-section {
@@ -501,7 +485,7 @@ section {
 }
 .tab-content > div:last-of-type p {
   max-width: 400px;
-  color: hsl(229deg, 8%, 60%);
+  color: hsl(230deg, 7%, 49%);
   font-size: 18px;
 }
 
@@ -575,7 +559,7 @@ section {
   border-bottom: 1px solid rgb(215, 215, 215);
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  color: hsl(229deg, 8%, 60%);
+  color: hsl(230deg, 7%, 49%);
 }
 
 .download-section {
@@ -653,7 +637,7 @@ section {
   color: hsl(229deg, 31%, 21%);
 }
 .browser h4 {
-  color: hsl(229deg, 8%, 60%);
+  color: hsl(230deg, 7%, 49%);
   font-weight: 400;
 }
 @media only screen and (min-width: 1024px) {

@@ -73,25 +73,3 @@
     }
   }
 }
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -10;
-}
-
-.hero-section::after {
-  filter: blur(80px) saturate(250%);
-  opacity: 0.4;
-
-  background-image: radial-gradient(
-      at 70% 60%,
-      rgb(252, 154, 94) 0px,
-      transparent 40%
-    ),
-    radial-gradient(at 20% 10%, rgb(160, 161, 243) 0px, transparent 50%);
-}
